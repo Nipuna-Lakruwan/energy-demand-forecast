@@ -125,10 +125,3 @@ uv run pytest
 Code: `data.py` (loading, time zones, weather aggregation), `features.py` (what's known at issue time),
 `models.py` (direct quantile and decomposed models, conformal intervals), `neso.py` (cardinal-point comparison),
 `metrics.py`. Every number above is in `results/metrics.json`.
-
-## Resume line
-
-Built a day-ahead forecaster for Great Britain's half-hourly electricity demand that splits demand into underlying
-consumption, embedded solar and embedded wind (LightGBM + split-conformal intervals); on a held-out year with real
-day-ahead weather forecasts it reached 4.2% MAPE (vs 8.4% naive and 4.7% for a direct model), 75% interval coverage,
-and came within 1.3 points of the grid operator's own forecast using only free public data.
