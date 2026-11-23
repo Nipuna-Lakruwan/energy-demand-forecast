@@ -1,0 +1,165 @@
+{
+  "rows": {
+    "train": 119080,
+    "val": 17512,
+    "test": 17512
+  },
+  "validation": {
+    "direct/leaves31": {
+      "mape_pct": 4.596307808841757,
+      "mae_mw": 1117.4523375964475,
+      "mase_vs_week_ago": 0.5137598053673083,
+      "pinball_mw": 358.6774078025996,
+      "coverage_p10_p90": 0.6319095477386935,
+      "width_p10_p90_mw": 2556.157903534341,
+      "iters": {
+        "0.1": 449,
+        "0.5": 495,
+        "0.9": 1258
+      }
+    },
+    "decomposed/leaves31": {
+      "mape_pct": 3.551521236312807,
+      "mae_mw": 891.6521095214481,
+      "mase_vs_week_ago": 0.40994590894893607,
+      "pinball_mw": 288.2717907699978,
+      "coverage_p10_p90": 0.7999086340794883,
+      "width_p10_p90_mw": 2859.4420562263267,
+      "iters": {
+        "u": 634,
+        "solar": 79,
+        "wind": 229
+      }
+    },
+    "direct/leaves127": {
+      "mape_pct": 4.6416136687955305,
+      "mae_mw": 1134.0984846349868,
+      "mase_vs_week_ago": 0.5214130367176767,
+      "pinball_mw": 380.28328848038734,
+      "coverage_p10_p90": 0.5806304248515304,
+      "width_p10_p90_mw": 2465.6160987792873,
+      "iters": {
+        "0.1": 193,
+        "0.5": 336,
+        "0.9": 441
+      }
+    },
+    "decomposed/leaves127": {
+      "mape_pct": 3.493108138493586,
+      "mae_mw": 880.3597890715614,
+      "mase_vs_week_ago": 0.4047541525211338,
+      "pinball_mw": 283.5376801571476,
+      "coverage_p10_p90": 0.7999086340794883,
+      "width_p10_p90_mw": 2836.417367463029,
+      "iters": {
+        "u": 1252,
+        "solar": 69,
+        "wind": 164
+      }
+    }
+  },
+  "test": {
+    "seasonal_naive": {
+      "mape_pct": 8.42512558954282,
+      "mae_mw": 2138.8134993147555,
+      "mase_vs_week_ago": 1.0,
+      "mape_ci95": [
+        7.901731624573651,
+        8.931819566163833
+      ]
+    },
+    "direct_lightgbm": {
+      "mape_pct": 4.679329666680757,
+      "mae_mw": 1125.002400613883,
+      "mase_vs_week_ago": 0.525993688077206,
+      "pinball_mw": 384.61546890937245,
+      "coverage_p10_p90": 0.547396071265418,
+      "width_p10_p90_mw": 2209.3802543108504,
+      "mape_ci95": [
+        4.437877744841314,
+        4.9342572175382475
+      ]
+    },
+    "decomposed": {
+      "mape_pct": 4.220737155590537,
+      "mae_mw": 1024.991307422827,
+      "mase_vs_week_ago": 0.4792336067409427,
+      "pinball_mw": 324.05735317321455,
+      "coverage_p10_p90": 0.754682503426222,
+      "width_p10_p90_mw": 2864.8086010859793,
+      "mape_ci95": [
+        3.995122752360236,
+        4.46937989231742
+      ]
+    },
+    "decomposed_actual_weather": {
+      "mape_pct": 3.27577506578822
+    },
+    "decomposed_components": {
+      "underlying_mape_pct": 2.312999105662668,
+      "solar_mae_mw": 379.2755417286279,
+      "wind_mae_mw": 584.2701792644789
+    }
+  },
+  "chosen": {
+    "direct": {
+      "leaves": 31,
+      "iters": {
+        "0.1": 449,
+        "0.5": 495,
+        "0.9": 1258
+      }
+    },
+    "decomposed": {
+      "leaves": 127,
+      "iters": {
+        "u": 1252,
+        "solar": 69,
+        "wind": 164
+      }
+    }
+  },
+  "vs_neso_cardinal_points": {
+    "points": 4115,
+    "days": 364,
+    "neso": 2.5806204106931183,
+    "decomposed_p50": 3.8853241127236315,
+    "direct_lightgbm_p50": 4.275268529935383,
+    "naive": 7.825714304110367,
+    "decomposed_minus_neso_pts": 1.3047037020305137,
+    "ci95": [
+      1.0960451801422935,
+      1.5230598282769943
+    ],
+    "share_of_points_we_beat_neso": 0.3586877278250304
+  },
+  "underlying_feature_gain_share": {
+    "u_lag7d": 0.3764,
+    "u_lag14d": 0.0913,
+    "u_lag2d": 0.0627,
+    "temp_day_mean": 0.0427,
+    "doy_sin": 0.0425,
+    "period": 0.0394,
+    "year_frac": 0.0308,
+    "dow": 0.0299,
+    "u_d1_early_mean": 0.0283,
+    "doy_cos": 0.0279,
+    "rad_day_mean": 0.0279,
+    "wind_speed_10m": 0.0238,
+    "temp_delta_2d": 0.0192,
+    "u_d2_min": 0.0178,
+    "cloud_cover": 0.0167,
+    "u_d2_max": 0.0165,
+    "shortwave_radiation": 0.0161,
+    "u_d2_early_mean": 0.0157,
+    "temp_lag2d": 0.0156,
+    "u_d2_mean": 0.0149,
+    "hdd": 0.0148,
+    "temperature_2m": 0.012,
+    "holiday": 0.0069,
+    "holiday_lag7d": 0.0036,
+    "xmas": 0.0032,
+    "cdd": 0.0027,
+    "holiday_lag2d": 0.0009
+  }
+}

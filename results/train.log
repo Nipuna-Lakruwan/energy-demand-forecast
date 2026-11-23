@@ -1,0 +1,10 @@
+val direct/leaves31        MAPE 4.60% cov 0.63 iters {0.1: 449, 0.5: 495, 0.9: 1258}
+val decomposed/leaves31    MAPE 3.55% cov 0.80 iters {'u': 634, 'solar': 79, 'wind': 229}
+val direct/leaves127       MAPE 4.64% cov 0.58 iters {0.1: 193, 0.5: 336, 0.9: 441}
+val decomposed/leaves127   MAPE 3.49% cov 0.80 iters {'u': 1252, 'solar': 69, 'wind': 164}
+TEST seasonal_naive     MAPE 8.43% [7.901731624573651, 8.931819566163833] MASE 1.000 cov None
+TEST direct_lightgbm    MAPE 4.68% [4.437877744841314, 4.9342572175382475] MASE 0.526 cov 0.547396071265418
+TEST decomposed         MAPE 4.22% [3.995122752360236, 4.46937989231742] MASE 0.479 cov 0.754682503426222
+components {'underlying_mape_pct': 2.312999105662668, 'solar_mae_mw': 379.2755417286279, 'wind_mae_mw': 584.2701792644789} oracle weather {'mape_pct': 3.27577506578822}
+NESO {"points": 4115, "days": 364, "neso": 2.5806204106931183, "decomposed_p50": 3.8853241127236315, "direct_lightgbm_p50": 4.275268529935383, "naive": 7.825714304110367, "decomposed_minus_neso_pts": 1.3047037020305137, "ci95": [1.0960451801422935, 1.5230598282769943], "share_of_points_we_beat_neso": 0.3586877278250304}
+wrote results/metrics.json
